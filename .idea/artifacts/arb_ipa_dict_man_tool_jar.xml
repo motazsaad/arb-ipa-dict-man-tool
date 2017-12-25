@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="arb-ipa-dict-man-tool:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/arb_ipa_dict_man_tool_jar</output-path>
+    <root id="archive" name="arb-ipa-dict-man-tool.jar">
+      <element id="module-output" name="arb-ipa-dict-man-tool" />
+    </root>
+  </artifact>
+</component>
