@@ -7,11 +7,11 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class KACSTMain {
-    public static StatusEvent statusEvent = new StatusEvent();
-    public static ProgressEvent progressEvent = new ProgressEvent();
-    public static UpdateEvent updateEvent = new UpdateEvent();
-    public static boolean stopThreads = false;
+public class KACSTLib {
+    //public static StatusEvent statusEvent = new StatusEvent();
+    //public static ProgressEvent progressEvent = new ProgressEvent();
+    //public static UpdateEvent updateEvent = new UpdateEvent();
+    //public static boolean stopThreads = false;
     private static Map<String, PhoneticDictionaryEntry> dict;
     private static Pattern pattern;
     private static int count;
@@ -132,5 +132,15 @@ public class KACSTMain {
         } catch (IOException excep) {
         }
 
+    }
+
+    public static ArrayList<String> phonotise(String word) {
+        //dict = (Map<String, PhoneticDictionaryEntry>) ConfigManager.getProperty("Dictionary");
+        PhoneticDictionaryEntry e = new PhoneticDictionaryEntry(word);
+        if (e.isValid()) {
+            e.generateDefs();
+        }
+        System.out.println(e.getDefs());
+        return e.getDefs();
     }
 }
