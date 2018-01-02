@@ -1,5 +1,6 @@
 package io.motaz;
 
+import com.ibbtek.utilities.ArabicNormalizer;
 import kacst.lib.KACSTLib;
 import kacst.lib.PhoneticDictionaryEntry;
 
@@ -29,16 +30,18 @@ public class Main {
             e.generateDefs();
         }
         ArrayList<String> pronunciation = e.getDefs();
-        System.out.println(pronunciation);
+        //System.out.println(pronunciation);
         int count = 0;
         String result = "";
+        String plainWord = new ArabicNormalizer(word).getOutput();
         for (String def : pronunciation) {
             count++;
-            //result = result + word + "\t\t" + def + "\n";
-            result = result + word + ((count == 1) ? "" : "(" + count + ")") + "\t\t" + def + "\n";
+            //result = result + plainWord + "\t\t" + def + "\n";
+            result = result + plainWord + ((count == 1) ? "" : "(" + count + ")") + "\t\t" + def + "\n";
         }
         System.out.println("result:");
         System.out.println(result);
         return e.getDefs();
     }
+
 }
