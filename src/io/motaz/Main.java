@@ -34,7 +34,8 @@ public class Main {
         String result = "";
         for (String def : pronunciation) {
             count++;
-            result = result + word + "\t\t" + def + "\n";
+            //result = result + word + "\t\t" + def + "\n";
+            result = result + word + ((count == 1) ? "" : "(" + count + ")") + "\t\t" + def + "\n";
         }
         System.out.println("result:");
         System.out.println(result);
