@@ -3,10 +3,7 @@ package io.motaz;
 import kacst.lib.KACSTLib;
 import kacst.lib.PhoneticDictionaryEntry;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Main {
@@ -31,13 +28,13 @@ public class Main {
         if (e.isValid()) {
             e.generateDefs();
         }
-        ArrayList<String> pronounciations =e.getDefs();
-        System.out.println(pronounciations);
+        ArrayList<String> pronunciation = e.getDefs();
+        System.out.println(pronunciation);
         int count = 0;
         String result = "";
-        for (String def : pronounciations) {
+        for (String def : pronunciation) {
             count++;
-            result = result + def + "\t\t" + def + "\n";
+            result = result + word + "\t\t" + def + "\n";
         }
         System.out.println("result:");
         System.out.println(result);
