@@ -65,6 +65,7 @@ public class KACSTLib {
                 Matcher matcher = pattern.matcher(str);
                 while (matcher.find()) {
                     String s = matcher.group();
+                    //System.out.println("s:" + s);
                     PhoneticDictionaryEntry e = new PhoneticDictionaryEntry(s);
                     if (e.isValid()) {
                         e.generateDefs();
@@ -132,15 +133,5 @@ public class KACSTLib {
         } catch (IOException excep) {
         }
 
-    }
-
-    public static ArrayList<String> phonotise(String word) {
-        //dict = (Map<String, PhoneticDictionaryEntry>) ConfigManager.getProperty("Dictionary");
-        PhoneticDictionaryEntry e = new PhoneticDictionaryEntry(word);
-        if (e.isValid()) {
-            e.generateDefs();
-        }
-        System.out.println(e.getDefs());
-        return e.getDefs();
     }
 }

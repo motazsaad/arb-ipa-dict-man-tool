@@ -1,5 +1,7 @@
 package kacst.lib;
 
+import com.ibbtek.utilities.ArabicNormalizer;
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -159,8 +161,10 @@ public class PhoneticDictionaryEntry implements Comparable<PhoneticDictionaryEnt
         String out = "";
         for (String def : defs) {
             count++;
-            //out=out+key+((count==1)? "" : "("+count+")")+" "+def+"\n"; 
-            out = out + key + "\t\t" + def + "\n";
+            String plainWord = new ArabicNormalizer(key).getOutput();
+            out = out + plainWord + ((count == 1) ? "" : "(" + count + ")") + "\t\t" + def + "\n";
+            //out= out + key + ((count==1)? "" : "("+count+")")+"\t\t"+def+"\n";
+            //out = out + key + "\t\t" + def + "\n";
         }
         /*for(int i:tashkeel)
             out=out+i+",";
