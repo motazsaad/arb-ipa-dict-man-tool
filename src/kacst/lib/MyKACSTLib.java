@@ -1,5 +1,7 @@
 package kacst.lib;
 
+import com.ibbtek.utilities.ArabicNormalizer;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Map;
@@ -7,14 +9,15 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class KACSTLib {
+public class MyKACSTLib {
+    // commented by Motaz, these are for gui
     //public static StatusEvent statusEvent = new StatusEvent();
     //public static ProgressEvent progressEvent = new ProgressEvent();
     //public static UpdateEvent updateEvent = new UpdateEvent();
     //public static boolean stopThreads = false;
     private static Map<String, PhoneticDictionaryEntry> dict;
     private static Pattern pattern;
-    private static int count;
+    //private static int count; // no need for it
 
     public static void importFiles(File dir, String encoding) {
         dict = (Map<String, PhoneticDictionaryEntry>) ConfigManager.getProperty("Dictionary");
@@ -69,7 +72,9 @@ public class KACSTLib {
                     PhoneticDictionaryEntry e = new PhoneticDictionaryEntry(s);
                     if (e.isValid()) {
                         e.generateDefs();
-                        dict.put(s, e);
+                        String plainWord = new ArabicNormalizer(s).getOutput();
+                        //dict.put(s, e);
+                        dict.put(plainWord, e);
                     }
                 }
                 str = reader.readLine();
@@ -95,8 +100,11 @@ public class KACSTLib {
                     String s = matcher.group(1);
                     String def = matcher.group(2);
                     PhoneticDictionaryEntry e = new PhoneticDictionaryEntry(s);
+                    String plainWord = new ArabicNormalizer(s).getOutput();
                     if (dict.containsKey(s))
                         e = dict.get(s);
+                    else if (dict.containsKey(plainWord))
+                        e = dict.get(plainWord);
                     else
                         dict.put(s, e);
                     e.addDef(def);
@@ -130,6 +138,7 @@ public class KACSTLib {
             writer.close();
             //JOptionPane.showMessageDialog(null, "Dictionary written successfully!");
             System.out.println("Dictionary written successfully!");
+            System.out.println(dict.size() + " entries written");
         } catch (IOException excep) {
         }
 

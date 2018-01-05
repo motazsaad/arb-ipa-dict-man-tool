@@ -2,7 +2,7 @@ package io.motaz;
 
 import com.ibbtek.utilities.ArabicNormalizer;
 import kacst.lib.ConfigManager;
-import kacst.lib.KACSTLib;
+import kacst.lib.MyKACSTLib;
 import kacst.lib.PhoneticDictionaryEntry;
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class MyPhonetizer {
     ArrayList<String> pronunciations;
 
     public MyPhonetizer(String word) {
-        KACSTLib.loadConfig();
+        MyKACSTLib.loadConfig();
         dict = (Map<String, PhoneticDictionaryEntry>) ConfigManager.getProperty("Dictionary");
         this.word = word;
         PhoneticDictionaryEntry e = new PhoneticDictionaryEntry(word);
@@ -23,7 +23,7 @@ public class MyPhonetizer {
         }
         this.pronunciations = e.getDefs();
         ConfigManager.setProperty("Dictionary", dict);
-        KACSTLib.clearDict();
+        MyKACSTLib.clearDict();
     }
 
     public String getPhones() {

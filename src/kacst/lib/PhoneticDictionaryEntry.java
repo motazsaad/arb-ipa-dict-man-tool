@@ -162,6 +162,7 @@ public class PhoneticDictionaryEntry implements Comparable<PhoneticDictionaryEnt
         for (String def : defs) {
             count++;
             String plainWord = new ArabicNormalizer(key).getOutput();
+            // modified by Motaz: pretty print of the string representation of dict entry
             out = out + plainWord + ((count == 1) ? "" : "(" + count + ")") + "\t\t" + def + "\n";
             //out= out + key + ((count==1)? "" : "("+count+")")+"\t\t"+def+"\n";
             //out = out + key + "\t\t" + def + "\n";
