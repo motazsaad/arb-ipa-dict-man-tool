@@ -19,7 +19,7 @@ public class Main {
         MyKACSTLib.loadConfig();
 
         updateDict(new File("out1.dict"), new File("dir/words1.txt"), new File("out2.dict"), "utf-8");
-        updateDict(new File("out1.dict"), new File("dir/words2.txt"), new File("out2.dict"), "utf-8");
+        updateDict(new File("out1.dict"), new File("dir/words2.txt"), new File("out3.dict"), "utf-8");
 
         System.out.println("done");
     }
