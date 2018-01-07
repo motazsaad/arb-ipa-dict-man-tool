@@ -6,19 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e757aff6-0c93-4f4e-b1bc-b1c63e3867c8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/MainScreen$1.class" afterPath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/MainScreen$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/MainScreen$2.class" afterPath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/MainScreen$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/MainScreen$3.class" afterPath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/MainScreen$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/MainScreen$4.class" afterPath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/MainScreen$4.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/MainScreen.class" afterPath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/MainScreen.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/mainDialog.class" afterPath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/io/motaz/ui/mainDialog.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/kacst/lib/MyKACSTLib.class" afterPath="$PROJECT_DIR$/out/production/arb-ipa-dict-man-tool/kacst/lib/MyKACSTLib.class" />
-      <change beforePath="$PROJECT_DIR$/src/io/motaz/ui/MainScreen.form" afterPath="$PROJECT_DIR$/src/io/motaz/ui/MainScreen.form" />
-      <change beforePath="$PROJECT_DIR$/src/io/motaz/ui/MainScreen.java" afterPath="$PROJECT_DIR$/src/io/motaz/ui/MainScreen.java" />
-      <change beforePath="$PROJECT_DIR$/src/kacst/lib/MyKACSTLib.java" afterPath="$PROJECT_DIR$/src/kacst/lib/MyKACSTLib.java" />
-    </list>
+    <list default="true" id="e757aff6-0c93-4f4e-b1bc-b1c63e3867c8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -490,7 +478,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="260" y="23" width="1922" height="1047" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -500,7 +487,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
