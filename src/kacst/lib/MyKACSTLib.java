@@ -9,8 +9,13 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/*
+    This class is created by Motaz Saad. It is a modification to kacst.lib.Main class
+    The modification makes the class standalone (separate business logic from gui operations
+     */
 public class MyKACSTLib {
-    // commented by Motaz, these are for gui
+
+    // commented by Motaz Saad, these are for gui
     //public static StatusEvent statusEvent = new StatusEvent();
     //public static ProgressEvent progressEvent = new ProgressEvent();
     //public static UpdateEvent updateEvent = new UpdateEvent();
@@ -59,8 +64,10 @@ public class MyKACSTLib {
         return dir.listFiles().length;
     }
 
-    public static void parseFile(File f, String encoding) {
+    public static String parseFile(File f, String encoding) {
         dict = (Map<String, PhoneticDictionaryEntry>) ConfigManager.getProperty("Dictionary");
+        String message = "";
+        int wordCount = 0;
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(f), encoding));
             String str = reader.readLine();
@@ -75,17 +82,22 @@ public class MyKACSTLib {
                         String plainWord = new ArabicNormalizer(s).getOutput();
                         //dict.put(s, e);
                         dict.put(plainWord, e);
+                        wordCount++;
                     }
                 }
                 str = reader.readLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
+            message = e.getMessage();
         }
+        message += "Entry file " + f.getName() + " loaded (" + wordCount + " words)\n";
+        return message;
     }
 
-    public static void readDict(File f, String encoding) {
+    public static String readDict(File f, String encoding) {
         dict = (Map<String, PhoneticDictionaryEntry>) ConfigManager.getProperty("Dictionary");
+        String message = "";
         try {
             //statusEvent.fire("Loading Dictionary: "+f.getPath());
             System.out.println("Loading Dictionary: " + f.getPath());
@@ -112,11 +124,14 @@ public class MyKACSTLib {
                 str = reader.readLine();
             }
             //statusEvent.fire("Done, loaded "+dict.size()+" entries");
-            System.out.println("Done, loaded " + dict.size() + " entries");
+            message += "Dictionary " + f.getName() + " loaded (" + dict.size() + " entries)\n";
+            System.out.print(message);
             //updateEvent.fire();
         } catch (IOException e) {
             e.printStackTrace();
+            message = e.getMessage();
         }
+        return message;
     }
 
 //    public static void updateList(){
@@ -128,8 +143,9 @@ public class MyKACSTLib {
         ConfigManager.setProperty("Dictionary", dict);
     }
 
-    public static void writeDict(File f, String encoding) {
+    public static String writeDict(File f, String encoding) {
         dict = (Map<String, PhoneticDictionaryEntry>) ConfigManager.getProperty("Dictionary");
+        String message = "";
         try {
             PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(f), encoding));
             for (PhoneticDictionaryEntry e : dict.values()) {
@@ -137,10 +153,11 @@ public class MyKACSTLib {
             }
             writer.close();
             //JOptionPane.showMessageDialog(null, "Dictionary written successfully!");
-            System.out.println("Dictionary written successfully!");
-            System.out.println(dict.size() + " entries written");
+            message += "Dictionary written successfully (" + dict.size() + " entries written)\n";
+            System.out.print(message);
         } catch (IOException excep) {
+            message = excep.getMessage();
         }
-
+        return message;
     }
 }
