@@ -92,6 +92,7 @@ public class MyKACSTLib {
             message = e.getMessage();
         }
         message += "Entry file " + f.getName() + " loaded (" + wordCount + " words)\n";
+        System.out.println(message);
         return message;
     }
 

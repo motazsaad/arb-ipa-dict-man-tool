@@ -21,7 +21,7 @@ public class MainScreen {
     private JButton addEntriesButton;
     private JButton outputDictionaryFileButton;
     private JTextField textFieldEntryFile;
-    private JTextField textFieldDictFile;
+    private JTextField textFieldInDictFile;
     private JTextField textFieldOutDictFile;
 
     // my variables
@@ -44,6 +44,7 @@ public class MainScreen {
                     textFieldEntryFile.setText(entryFile.getName());
                 } else {
                     textFieldEntryFile.setText("no file selected");
+                    entryFile = null;
                 }
             }
         });
@@ -57,9 +58,10 @@ public class MainScreen {
                 int returnVal = fc.showOpenDialog(panelMain);
                 if (returnVal == JFileChooser.APPROVE_OPTION) {
                     inDictFile = fc.getSelectedFile();
-                    textFieldDictFile.setText(inDictFile.getName());
+                    textFieldInDictFile.setText(inDictFile.getName());
                 } else {
-                    textFieldDictFile.setText("no file selected");
+                    textFieldInDictFile.setText("no file selected");
+                    inDictFile = null;
                 }
 
             }
@@ -77,6 +79,7 @@ public class MainScreen {
                     textFieldOutDictFile.setText(outDictFile.getName());
                 } else {
                     textFieldOutDictFile.setText("no file selected");
+                    outDictFile = null;
                 }
             }
         });
@@ -88,6 +91,10 @@ public class MainScreen {
                 if (entryFile != null && outDictFile != null) {
                     String log = IPADictUtil.updateDict(entryFile, inDictFile, outDictFile, "utf-8");
                     logTextArea.append(log);
+                    // reset files
+                    entryFile = null; inDictFile = null; outDictFile = null;
+                    // reset text field
+                    textFieldEntryFile.setText("");textFieldInDictFile.setText(""); textFieldOutDictFile.setText("");
                 } else
                     JOptionPane.showMessageDialog(null, "Please select files");
             }
