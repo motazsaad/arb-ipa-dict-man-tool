@@ -1,5 +1,5 @@
 # arb-ipa-dict-man-tool
-A too to generate IPA Arabic phonotic dictionary. 
+A too to generate IPA Arabic phonetic dictionary. 
 
 # Reference 
 
